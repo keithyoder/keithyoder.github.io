@@ -5,7 +5,7 @@
     <title>GeoJSON editor</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link href="css/min/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="css/min/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -14,15 +14,10 @@
             <div id="panel-title">FlyBuy Polygon Editor</div>
             <hr/>
             <div id="geojson-controls">
-                <button onclick="document.getElementById('geojson-input').select();">Select All</button>
-                <a id="download-link" href="data:;base64," download="geojson.json">
-                    <button>Download</button>
-                </a>
             </div>
-            <textarea id="geojson-input" placeholder="Drag and drop GeoJSON onto the map or paste it here to begin editing."></textarea>
+            <textarea id="geojson-input" placeholder=""></textarea>
         </div>
     </div>
-    <button style="position: absolute; left:55%; top:1%; z-index: 10000;" onclick="panelToggle();">Toggle Panel</button>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map-container" style="width: 64.9%;">
         <div id="map-holder"></div>
