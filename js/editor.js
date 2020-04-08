@@ -47,16 +47,6 @@ function init() {
     // Then the overlay specific events (since it only appears once drag starts).
     google.maps.event.addDomListener(dropContainer, 'dragend', hidePanel);
     google.maps.event.addDomListener(dropContainer, 'dragleave', hidePanel);
-    // Set up events for changing the geoJson input.
-    google.maps.event.addDomListener(
-        geoJsonInput,
-        'input',
-        refreshDataFromGeoJson);
-    google.maps.event.addDomListener(
-        geoJsonInput,
-        'input',
-        refreshDownloadLinkFromGeoJson);
-
     // Set up events for styling.
     google.maps.event.addDomListener(window, 'resize', resizeGeoJsonInput);
 }
