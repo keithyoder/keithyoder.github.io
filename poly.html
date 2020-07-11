@@ -39,7 +39,7 @@
             strokeWeight: 2,
             map: map
         });
-        map.addListener('click', function() {
+        map.addListener('click', function(event) {
             var path = zone.getPath();
             path.push(pos);
         });
