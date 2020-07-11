@@ -75,7 +75,7 @@
             var path = zone.getPath();
             path.push(pos);
             var marker = new google.maps.Marker({
-                position: event.latLng,
+                position: pos,
                 title: '#' + path.getLength(),
                 map: map
             });
