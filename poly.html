@@ -78,7 +78,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent(`Accuracy: ${trunc(position.coords.accuracy)}m`);
+            infoWindow.setContent(`Accuracy: ${Math.trunc(position.coords.accuracy)}m`);
             infoWindow.open(map);
             accuracyCircle.setCenter(pos);
             accuracyCircle.setRadius(position.coords.accuracy);
