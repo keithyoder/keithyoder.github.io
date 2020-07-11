@@ -25,13 +25,25 @@
           color: white;
           text-align: center;
       }
+      .button {
+          display: inline-block;
+          padding: 0.55em 1.2em;
+          border: 0.1em solid #FFFFFF;
+          border-radius:0.12em;
+          box-sizing: border-box;
+          text-decoration: none;
+          font-family: 'Roboto',sans-serif;
+          font-weight: 300;
+          color: gray;
+          text-align:center;
+          transition: all 0.2s;
+      }
     </style>
   </head>
   <body>
     <div id="map"></div>
     <div class="footer">
-        <button type="button" onclick="markPoint()" >Point</button>
-        <button type="button" onclick="newZone()" >Clear</button>
+        <button type="button" class="button" onclick="markPoint()" >Point</button>
         <p id="polygon">Polygon</p>
     </div>
     <script>
@@ -66,7 +78,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Accuracy: ${int(position.coords.accuracy)}m');
+            infoWindow.setContent(`Accuracy: ${int(position.coords.accuracy)}m`);
             infoWindow.open(map);
             accuracyCircle.setCenter(pos);
             accuracyCircle.setRadius(position.coords.accuracy);
