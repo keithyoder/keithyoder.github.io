@@ -47,7 +47,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.'+position.accuracy);
+            infoWindow.setContent('Location found.'+position.coords.accuracy);
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
