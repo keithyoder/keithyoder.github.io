@@ -66,7 +66,7 @@
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.'+position.coords.accuracy);
+            infoWindow.setContent('Accuracy: ${int(position.coords.accuracy)}m');
             infoWindow.open(map);
             accuracyCircle.setCenter(pos);
             accuracyCircle.setRadius(position.coords.accuracy);
@@ -97,7 +97,7 @@
       function markPoint() {
         var path = zone.getPath();
         path.push(new google.maps.LatLng(pos));
-        var marker = new google.maps.Marker({
+        /*var marker = new google.maps.Marker({
             position: pos,
             title: '#' + path.getLength(),
             icon: {
@@ -105,8 +105,10 @@
                 scale: 6
             },
             map: map
-        });
-        document.getElementById("polygon").innerText = JSON.stringify(zone.getPath()["i"])
+        });*/
+        polyText = JSON.stringify(zone.getPath()["i"])
+        document.getElementById("polygon").innerText = polyText
+        navigator.clipboard.writeText(polyText)
       };
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
