@@ -83,6 +83,9 @@
             infoWindow.open(map);
             accuracyCircle.setCenter(pos);
             accuracyCircle.setRadius(position.coords.accuracy);
+            var path = zone.getPath();
+            path.pop();
+            path.push(new google.maps.LatLng(pos));
             //accuracyCircle.open(map);
             map.setCenter(pos);
           }, function() {
@@ -122,6 +125,7 @@
         polyText = JSON.stringify(zone.getPath()["i"])
         document.getElementById("polygon").innerText = polyText
         navigator.clipboard.writeText(polyText)
+        path.push(new google.maps.LatLng(pos));
       };
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
