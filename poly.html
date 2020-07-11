@@ -82,6 +82,7 @@
       }
 
       function newZone() {
+        setMapOnAll(null);
         zone = new google.maps.Polygon({
             geodesic: true,
             strokeColor: '#0000FF',
@@ -105,7 +106,7 @@
             },
             map: map
         });
-        document.getElementById("polygon").innerText = zone.getPath()
+        document.getElementById("polygon").innerText = JSON.stringify(zone.getPath())
       };
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
