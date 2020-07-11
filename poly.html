@@ -96,7 +96,7 @@
 
       function markPoint() {
         var path = zone.getPath();
-        path.push(pos);
+        path.push(new google.maps.LatLng(pos));
         var marker = new google.maps.Marker({
             position: pos,
             title: '#' + path.getLength(),
@@ -106,7 +106,7 @@
             },
             map: map
         });
-        document.getElementById("polygon").innerText = JSON.stringify(zone.getPath())
+        document.getElementById("polygon").innerText = JSON.stringify(zone.getPath()["i"])
       };
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
