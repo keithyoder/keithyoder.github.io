@@ -39,10 +39,6 @@
             strokeWeight: 2,
             map: map
         });
-        map.addListener('click', function(event) {
-            var path = zone.getPath();
-            path.push(pos);
-        });
         infoWindow = new google.maps.InfoWindow;
         accuracyCircle = new google.maps.Circle({
             strokeColor: "#FF0000",
@@ -75,6 +71,15 @@
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           }, options);
+          map.addListener('click', function(event) {
+            var path = zone.getPath();
+            path.push(pos);
+            var marker = new google.maps.Marker({
+                position: event.latLng,
+                title: '#' + path.getLength(),
+                map: map
+            });
+          });
         } else {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
