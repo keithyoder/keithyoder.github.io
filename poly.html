@@ -135,7 +135,7 @@
             if (txt != '[') {
                 txt = txt + ','
             };
-            txt = txt + `(${path[i]['lng']},${path[i]['lat']})`
+            txt = txt + `(${path[i].lng()},${path[i].lat()})`
           }
           return txt + ']'
       }
