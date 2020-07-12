@@ -16,25 +16,37 @@
         margin: 0;
         padding: 0;
       }
+      .footerleft {
+          position: absolute;
+          top: 0;
+          left: 0;
+      }
+      .footerright {
+          position: absolute;
+          top: 0;
+          right: 0;
+      }
       .footer {
           position: fixed;
           left: 0;
           bottom: 0;
           width: 100%;
-          background-color: red;
+          background-color: #336499;
           color: white;
           text-align: center;
-      }
-      .button {
-          display: inline-block;
-          padding: 1.2em 2.4em;
-          border: 0.1em solid black;
-          border-radius:0.12em;
-          box-sizing: border-box;
           text-decoration: none;
           font-family: 'Roboto',sans-serif;
           font-weight: 300;
-          color: black;
+      }
+      .button {
+          display: inline-block;
+          padding: 1.0em 2.4em;
+          border: 0.2em solid #336499;
+          text-decoration: none;
+          font-family: 'Roboto',sans-serif;
+          font-size: 14pt;
+          font-weight: 500;
+          color: #336499;
           background-color: white;
           text-align:center;
           transition: all 0.2s;
@@ -44,9 +56,15 @@
   <body>
     <div id="map"></div>
     <div class="footer">
-        <button type="button" class="button" onclick="markPoint()" >Point</button>
-        <button type="button" class="button" onclick="location.reload();" >Reload</button>
-        <p id="polygon">Polygon</p>
+        <div>
+            <button type="button" class="button footerleft" onclick="markPoint()" >Point</button>
+        </div>
+        <div>
+            <p id="polygon">Polygon</p>
+        </div>
+        <div>
+            <button type="button" class="button footerright" onclick="location.reload();" >Reload</button>
+        </div>
     </div>
     <script>
       var map, infoWindow;
