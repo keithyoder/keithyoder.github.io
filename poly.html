@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
+    <title>FlyBuy Zone Creator</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
@@ -27,7 +27,7 @@
           right: 0;
       }
       .footer {
-          position: fixed;
+          position: absolute;
           left: 0;
           bottom: 0;
           width: 100%;
@@ -44,7 +44,7 @@
           border: 0.2em solid #336499;
           text-decoration: none;
           font-family: 'Roboto',sans-serif;
-          font-size: 14pt;
+          font-size: 0.9em;
           font-weight: 500;
           color: #336499;
           background-color: white;
@@ -60,7 +60,7 @@
             <button type="button" class="button footerleft" onclick="markPoint()" >Point</button>
         </div>
         <div>
-            <p id="polygon">Polygon</p>
+            <p id="polygon">&nbsp;</p>
         </div>
         <div>
             <button type="button" class="button footerright" onclick="location.reload();" >Reload</button>
@@ -142,7 +142,7 @@
             map: map    
         });
         polyText = formatPolygon(zone.getPath()["i"])
-        document.getElementById("polygon").innerText = polyText
+        //document.getElementById("polygon").innerText = polyText
         navigator.clipboard.writeText(polyText)
         path.push(new google.maps.LatLng(pos));
       };
