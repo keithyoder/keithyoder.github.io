@@ -135,8 +135,7 @@
             if (txt != '[') {
                 txt = txt + ','
             };
-            alert(JSON.stringify(path[i]))
-            txt = txt + `(${path[i].lng},${path[i].lat})`
+            txt = txt + `(${path[i]['lng']},${path[i]['lat']})`
           }
           return txt + ']'
       }
